@@ -355,8 +355,8 @@ const Projects: React.FC<Props> = ({viewRef}) => {
     const [imageVisible, setImageVisible] = useState<'1' | '2' | '3' | '4' | null>(null);
     const [ imageState, setImageState ] = useState<{[key: string]: number}>({
         greenwood: 0,
-        restay: 0,
-        running: 0
+        running: 0,
+        restay: 0
     })
 
     const { greenwood, restay, running } = imageState;
@@ -370,15 +370,15 @@ const Projects: React.FC<Props> = ({viewRef}) => {
         },
         {
             id: '2',
-            name: 'restay',
-            imgSrc: restayImages[restay].src,
-            altName: 'restay img',
-        },
-        {
-            id: '3',
             name: 'running',
             imgSrc: runningImages[running].src,
             altName: 'running img',
+        },
+        {
+            id: '3',
+            name: 'restay',
+            imgSrc: restayImages[restay].src,
+            altName: 'restay img',
         }
     ]
 
@@ -390,10 +390,10 @@ const Projects: React.FC<Props> = ({viewRef}) => {
             switch( name ) {
                 case 'greenwood':
                     return [imageState.greenwood, greenwoodImages.length]
-                case 'restay':
-                    return [imageState.restay, restayImages.length];
                 case 'running':
                     return [imageState.running, runningImages.length]
+                case 'restay':
+                    return [imageState.restay, restayImages.length];
                 default: 
                     return [];
             }

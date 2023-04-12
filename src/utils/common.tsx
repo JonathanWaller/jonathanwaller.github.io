@@ -95,25 +95,26 @@ export const runningImages: any[] = [
 export const projects: Project[] = [
     {
         textId: "feature-1",
-        url: "https://github.com/greenwood-labs/kovan-greenwood-v2-interface",
+        url: "https://github.com/greenwood-labs/greenwood-dashboard",
         name: 'Greenwood',
         header: 'Web3 Support Tool',
         description: 'Customer support plaform helping Web3 teams automate and resolve support requests at scale'
     },
     {
         textId: "feature-2",
-        url: "https://github.com/JonathanWaller/Personal_Project-Rentals",
-        name: 'Restay',
-        header: 'Welcome home',
-        description: 'airbnb-like resource to book short-term rentals'
-    },
-    {
-        textId: "feature-3",
         url: "https://observablehq.com/d/2aaf47675945b9c2",
         name: 'Running',
         header: 'Visualizing my runs',
         description: 'D3.js visualization displaying my run data over the past several years'
     },
+    {
+        textId: "feature-3",
+        url: "https://github.com/JonathanWaller/Personal_Project-Rentals",
+        name: 'Restay',
+        header: 'Welcome home',
+        description: 'airbnb-like resource to book short-term rentals'
+    },
+    
     // {
     //     textId: "feature-4",
     //     url: "https://observablehq.com/d/2aaf47675945b9c2",
@@ -132,15 +133,15 @@ export const projectImagesDesktop: ProjectImage[] = [
     },
     {
         id: '2',
-        name: 'restay',
-        imgSrc: restayImages,
-        altName: 'restay img',
-    },
-    {
-        id: '3',
         name: 'running',
         imgSrc: runningImages,
         altName: 'running img',
+    },
+    {
+        id: '3',
+        name: 'restay',
+        imgSrc: restayImages,
+        altName: 'restay img',
     }
 ]
 
@@ -152,13 +153,13 @@ export const projectImagesMobile = [
     },
     {
         id: '2',
-        imgSrc: restayImages[0].src,
-        altName: 'restay img'
+        imgSrc: runningImages[0].src,
+        altName: 'running img'
     },
     {
         id: '3',
-        imgSrc: runningImages[0].src,
-        altName: 'running img'
+        imgSrc: restayImages[0].src,
+        altName: 'restay img'
     }
 ]
 
