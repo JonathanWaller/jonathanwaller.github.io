@@ -26,11 +26,11 @@ const Container = styled.div`
         margin-bottom: -300px;
     }
     @media (max-width: ${breakpoints.xl}px) {
-        margin-top: -300px;
-        margin-bottom: -300px;
+        margin-top: -250px;
+        margin-bottom: -250px;
     }
     @media (max-width: ${breakpoints.lg}px) {
-   
+
     }
     @media (max-width: ${breakpoints.md}px) {
         flex-direction: column;
@@ -38,7 +38,6 @@ const Container = styled.div`
         margin-bottom: 0;
     }
     @media (max-width: ${breakpoints.sm}px) {
-
     }
 
 `
