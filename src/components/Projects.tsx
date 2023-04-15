@@ -8,7 +8,7 @@ import Heading from "./shared/Heading";
 import { breakpoints } from "../styles/breakpoints";
 import { gray, white, black, darkGray, offWhite, primaryColor } from "../styles/colors";
 
-import { greenwoodImages, restayImages, runningImages, projects, projectMobile } from "../utils/common";
+import { greenwoodImages, restayImages, runningImages, stockTrackerImages, projects, projectMobile } from "../utils/common";
 import { Project, ProjectImage } from "../types/projects";
 
 const Container = styled.div`
@@ -353,28 +353,35 @@ const Projects: React.FC<Props> = ({viewRef}) => {
     const width = useWindowWidth();
     const [imageVisible, setImageVisible] = useState<'1' | '2' | '3' | '4' | null>(null);
     const [ imageState, setImageState ] = useState<{[key: string]: number}>({
+        stockTracker: 0,
         greenwood: 0,
         running: 0,
         restay: 0
     })
 
-    const { greenwood, restay, running } = imageState;
+    const { greenwood, restay, running, stockTracker } = imageState;
 
     const projectImagesDesktop: ProjectImage[] = [
         {
             id: '1',
+            name: 'stockTracker',
+            imgSrc: stockTrackerImages[stockTracker].src,
+            altName: 'Stock Tracker'
+        },
+        {
+            id: '2',
             name: 'greenwood',
             imgSrc: greenwoodImages[greenwood].src,
             altName: 'Greenwood Labs',
         },
         {
-            id: '2',
+            id: '3',
             name: 'running',
             imgSrc: runningImages[running].src,
             altName: 'running img',
         },
         {
-            id: '3',
+            id: '4',
             name: 'restay',
             imgSrc: restayImages[restay].src,
             altName: 'restay img',
@@ -393,6 +400,8 @@ const Projects: React.FC<Props> = ({viewRef}) => {
                     return [imageState.running, runningImages.length]
                 case 'restay':
                     return [imageState.restay, restayImages.length];
+                case 'stockTracker':
+                    return [imageState.stockTracker, stockTrackerImages.length]
                 default: 
                     return [];
             }
@@ -427,7 +436,7 @@ const Projects: React.FC<Props> = ({viewRef}) => {
         let feature1 = document.getElementById( 'feature-1' )
         let feature2 = document.getElementById( 'feature-2' )
         let feature3 = document.getElementById( 'feature-3' )
-        // let feature4 = document.getElementById( 'feature-4' )
+        let feature4 = document.getElementById( 'feature-4' )
 
         // let featureVideo1 = document.getElementById( 'feature-1-video' ) as HTMLVideoElement
         // let featureVideo2 = document.getElementById( 'feature-2-video' ) as HTMLVideoElement
@@ -436,7 +445,7 @@ const Projects: React.FC<Props> = ({viewRef}) => {
 
 
         if (feature1 && feature2 && feature3 
-            // && feature4
+            && feature4
         ) {
 
             let feature1Observer = new IntersectionObserver((entries) => {
@@ -472,21 +481,21 @@ const Projects: React.FC<Props> = ({viewRef}) => {
                 }
             }, {threshold: 0.5})
 
-            // let feature4Observer = new IntersectionObserver((entries) => {
-            //     if(entries[0].isIntersecting) {
-            //         setImageVisible('4')
-            //         featureVideo4.pause()
-            //         featureVideo4.currentTime = 0
-            //         setTimeout(() => {
-            //             featureVideo4.play()
-            //         }, 450)
-            //     }
-            // }, {threshold: 0.5})
+            let feature4Observer = new IntersectionObserver((entries) => {
+                if(entries[0].isIntersecting) {
+                    setImageVisible('4')
+                    // featureVideo4.pause()
+                    // featureVideo4.currentTime = 0
+                    // setTimeout(() => {
+                    //     featureVideo4.play()
+                    // }, 450)
+                }
+            }, {threshold: 0.5})
 
             feature1Observer.observe(feature1)
             feature2Observer.observe(feature2)
             feature3Observer.observe(feature3)
-            // feature4Observer.observe(feature4)
+            feature4Observer.observe(feature4)
         }   
         
 
