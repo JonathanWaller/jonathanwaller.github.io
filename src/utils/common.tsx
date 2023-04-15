@@ -57,12 +57,26 @@ const runningAll = require('../assets/images/running/running-all.png');
 const runningYear = require('../assets/images/running/running-year.png');
 const runningViz = require('../assets/images/running/running-viz.gif');
 
+// stockTracker
+const stockTracker1 = require('../assets/images/stockTracker/st-1.png');
+const stockTracker2 = require('../assets/images/stockTracker/st-2.png');
+const stockTracker3 = require('../assets/images/stockTracker/st-3.png');
+const stockTracker4 = require('../assets/images/stockTracker/st-4.png');
+
+
 // export const greenwoodImages: Image[] = [
 //     { id: 1, src: gwLoans},
 //     // { id: 1, src: '../../'},
 //     { id: 2, src: gwChart},
 //     {id: 3, src: gwBorrow}
 // ]
+
+export const stockTrackerImages: any[] = [
+    {id: 1, src: stockTracker1},
+    {id: 2, src: stockTracker2},
+    {id: 3, src: stockTracker3},
+    {id: 4, src: stockTracker4},
+]
 
 export const greenwoodImages: Image[] = [
     { id: 1, src: gwFeature2},
@@ -88,57 +102,61 @@ export const beakImages: Image[] = [
 export const runningImages: any[] = [
     {id: 1, src: runningViz},
     {id: 2, src: runningAll},
-    {id: 3, src: runningYear},
-    
+    {id: 3, src: runningYear}
 ]
 
 export const projects: Project[] = [
     {
         textId: "feature-1",
+        url: "https://github.com/JonathanWaller/stock-tracker",
+        name: 'Stock Tracker',
+        header: 'Performance tracker',
+        description: 'Next.js app that allows users to search and compare stocks'
+    },
+    {
+        textId: "feature-2",
         url: "https://github.com/greenwood-labs/greenwood-dashboard",
         name: 'Greenwood',
         header: 'Web3 Support Tool',
         description: 'Customer support plaform helping Web3 teams automate and resolve support requests at scale'
     },
     {
-        textId: "feature-2",
+        textId: "feature-3",
         url: "https://observablehq.com/d/2aaf47675945b9c2",
         name: 'Running',
         header: 'Visualizing my runs',
         description: 'D3.js visualization displaying my run data over the past several years'
     },
     {
-        textId: "feature-3",
+        textId: "feature-4",
         url: "https://github.com/JonathanWaller/Personal_Project-Rentals",
         name: 'Restay',
-        header: 'Welcome home',
-        description: 'airbnb-like resource to book short-term rentals'
-    },
-    
-    // {
-    //     textId: "feature-4",
-    //     url: "https://observablehq.com/d/2aaf47675945b9c2",
-    //     name: 'Have peace of mind',
-    //     header: 'If you have a problem, we find a solution',
-    //     description: 'Greenwood works directly with DeFi protocol teams to quickly and effectively resolve any technical problems you experience.'
-    // }
+        header: 'airbnb-like tool',
+        description: 'One of the first full-stack apps I ever created.'
+    }
 ]
 
 export const projectImagesDesktop: ProjectImage[] = [
     {
         id: '1',
+        name: 'stockTracker',
+        imgSrc: stockTrackerImages,
+        altName: 'Stock Tracker'
+    },
+    {
+        id: '2',
         name: 'greenwood',
         imgSrc: greenwoodImages,
         altName: 'Greenwood Labs',
     },
     {
-        id: '2',
+        id: '3',
         name: 'running',
         imgSrc: runningImages,
         altName: 'running img',
     },
     {
-        id: '3',
+        id: '4',
         name: 'restay',
         imgSrc: restayImages,
         altName: 'restay img',
@@ -148,16 +166,21 @@ export const projectImagesDesktop: ProjectImage[] = [
 export const projectImagesMobile = [
     {
         id: '1',
+        imgSrc: stockTrackerImages[0].src,
+        altName: 'Stock Tracker'
+    },
+    {
+        id: '2',
         imgSrc: greenwoodImages[0].src,
         altName: 'Greenwood Labs'
     },
     {
-        id: '2',
+        id: '3',
         imgSrc: runningImages[0].src,
         altName: 'running img'
     },
     {
-        id: '3',
+        id: '4',
         imgSrc: restayImages[0].src,
         altName: 'restay img'
     }
