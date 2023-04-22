@@ -8,7 +8,7 @@ import Heading from "./shared/Heading";
 import { breakpoints } from "../styles/breakpoints";
 import { gray, white, black, darkGray, offWhite, primaryColor } from "../styles/colors";
 
-import { greenwoodImages, restayImages, runningImages, stockTrackerImages, projects, projectMobile } from "../utils/common";
+import { greenwoodImages, runningImages, stockTrackerImages, projects, projectMobile, aiToolImages } from "../utils/common";
 import { Project, ProjectImage } from "../types/projects";
 
 const Container = styled.div`
@@ -19,18 +19,17 @@ const Container = styled.div`
 
     @media (max-width: ${breakpoints.xxxl}px) {
         margin-top: -200px;
-        margin-bottom: -200px;
+        margin-bottom: -100px;
     }
     @media (max-width: ${breakpoints.xxl}px) {
         margin-top: -300px;
-        margin-bottom: -300px;
+        margin-bottom: -120px;
     }
     @media (max-width: ${breakpoints.xl}px) {
         margin-top: -250px;
-        margin-bottom: -250px;
+        margin-bottom: -220px;
     }
     @media (max-width: ${breakpoints.lg}px) {
-
     }
     @media (max-width: ${breakpoints.md}px) {
         flex-direction: column;
@@ -353,38 +352,38 @@ const Projects: React.FC<Props> = ({viewRef}) => {
     const width = useWindowWidth();
     const [imageVisible, setImageVisible] = useState<'1' | '2' | '3' | '4' | null>(null);
     const [ imageState, setImageState ] = useState<{[key: string]: number}>({
+        aiTool: 0,
         stockTracker: 0,
         greenwood: 0,
         running: 0,
-        restay: 0
     })
 
-    const { greenwood, restay, running, stockTracker } = imageState;
+    const { greenwood,  running, stockTracker, aiTool } = imageState;
 
     const projectImagesDesktop: ProjectImage[] = [
         {
             id: '1',
+            name: 'aiTool',
+            imgSrc: aiToolImages[aiTool].src,
+            altName: 'AI Tool'
+        },
+        {
+            id: '2',
             name: 'stockTracker',
             imgSrc: stockTrackerImages[stockTracker].src,
             altName: 'Stock Tracker'
         },
         {
-            id: '2',
+            id: '3',
             name: 'greenwood',
             imgSrc: greenwoodImages[greenwood].src,
             altName: 'Greenwood Labs',
         },
         {
-            id: '3',
+            id: '4',
             name: 'running',
             imgSrc: runningImages[running].src,
             altName: 'running img',
-        },
-        {
-            id: '4',
-            name: 'restay',
-            imgSrc: restayImages[restay].src,
-            altName: 'restay img',
         }
     ]
 
@@ -398,10 +397,12 @@ const Projects: React.FC<Props> = ({viewRef}) => {
                     return [imageState.greenwood, greenwoodImages.length]
                 case 'running':
                     return [imageState.running, runningImages.length]
-                case 'restay':
-                    return [imageState.restay, restayImages.length];
+                // case 'restay':
+                //     return [imageState.restay, restayImages.length];
                 case 'stockTracker':
                     return [imageState.stockTracker, stockTrackerImages.length]
+                case 'aiTool': 
+                    return [imageState.aiTool, aiToolImages.length]
                 default: 
                     return [];
             }
