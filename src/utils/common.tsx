@@ -63,6 +63,11 @@ const stockTracker2 = require('../assets/images/stockTracker/st-2.png');
 const stockTracker3 = require('../assets/images/stockTracker/st-3.png');
 const stockTracker4 = require('../assets/images/stockTracker/st-4.png');
 
+// ai
+const aiTool1 = require('../assets/images/aiTool/main.gif');
+const aiTool2 = require('../assets/images/aiTool/core.gif');
+const aiTool3 = require('../assets/images/aiTool/ai-still.png');
+
 
 // export const greenwoodImages: Image[] = [
 //     { id: 1, src: gwLoans},
@@ -70,6 +75,12 @@ const stockTracker4 = require('../assets/images/stockTracker/st-4.png');
 //     { id: 2, src: gwChart},
 //     {id: 3, src: gwBorrow}
 // ]
+
+export const aiToolImages: any [] = [
+    {id: 1, src: aiTool1},
+    {id: 2, src: aiTool2},
+    {id: 3, src: aiTool3}
+]
 
 export const stockTrackerImages: any[] = [
     {id: 1, src: stockTracker1},
@@ -107,83 +118,101 @@ export const runningImages: any[] = [
 
 export const projects: Project[] = [
     {
-        textId: "feature-1",
+        textId: 'feature-1',
+        url: "https://github.com/JonathanWaller/ai-tool",
+        name: 'AI Tool',
+        header: "Displaying the awesome abilities of AI",
+        description: "Next.js app. Work in progress!"
+    },
+    {
+        textId: "feature-2",
         url: "https://github.com/JonathanWaller/stock-tracker",
         name: 'Stock Tracker',
         header: 'Performance tracker',
         description: 'Next.js app that allows users to search and compare stocks'
     },
     {
-        textId: "feature-2",
+        textId: "feature-3",
         url: "https://github.com/greenwood-labs/greenwood-dashboard",
         name: 'Greenwood',
         header: 'Web3 Support Tool',
         description: 'Customer support plaform helping Web3 teams automate and resolve support requests at scale'
     },
     {
-        textId: "feature-3",
+        textId: "feature-4",
         url: "https://observablehq.com/d/2aaf47675945b9c2",
         name: 'Running',
         header: 'Visualizing my runs',
         description: 'D3.js visualization displaying my run data over the past several years'
     },
-    {
-        textId: "feature-4",
-        url: "https://github.com/JonathanWaller/Personal_Project-Rentals",
-        name: 'Restay',
-        header: 'airbnb-like tool',
-        description: 'One of the first full-stack apps I ever created.'
-    }
+    // {
+    //     textId: "feature-5",
+    //     url: "https://github.com/JonathanWaller/Personal_Project-Rentals",
+    //     name: 'Restay',
+    //     header: 'airbnb-like tool',
+    //     description: 'One of the first full-stack apps I ever created.'
+    // }
 ]
 
 export const projectImagesDesktop: ProjectImage[] = [
     {
         id: '1',
+        name: 'aiTool',
+        imgSrc: aiToolImages,
+        altName: 'AI Tool'
+    },
+    {
+        id: '2',
         name: 'stockTracker',
         imgSrc: stockTrackerImages,
         altName: 'Stock Tracker'
     },
     {
-        id: '2',
+        id: '3',
         name: 'greenwood',
         imgSrc: greenwoodImages,
         altName: 'Greenwood Labs',
     },
     {
-        id: '3',
+        id: '4',
         name: 'running',
         imgSrc: runningImages,
         altName: 'running img',
     },
-    {
-        id: '4',
-        name: 'restay',
-        imgSrc: restayImages,
-        altName: 'restay img',
-    }
+    // {
+    //     id: '5',
+    //     name: 'restay',
+    //     imgSrc: restayImages,
+    //     altName: 'restay img',
+    // }
 ]
 
 export const projectImagesMobile = [
     {
         id: '1',
+        imgSrc: aiToolImages[0].src,
+        altName: 'AI Tool'
+    },
+    {
+        id: '2',
         imgSrc: stockTrackerImages[0].src,
         altName: 'Stock Tracker'
     },
     {
-        id: '2',
+        id: '3',
         imgSrc: greenwoodImages[0].src,
         altName: 'Greenwood Labs'
     },
     {
-        id: '3',
+        id: '4',
         imgSrc: runningImages[0].src,
         altName: 'running img'
     },
-    {
-        id: '4',
-        imgSrc: restayImages[0].src,
-        altName: 'restay img'
-    }
+    // {
+    //     id: '5',
+    //     imgSrc: restayImages[0].src,
+    //     altName: 'restay img'
+    // }
 ]
 
 export const projectMobile = projects.reduce( (acc:any,curr: Project,ind: number) => [...acc, {...curr, ...projectImagesMobile[ind]}] , [])
