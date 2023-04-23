@@ -64,9 +64,12 @@ const stockTracker3 = require('../assets/images/stockTracker/st-3.png');
 const stockTracker4 = require('../assets/images/stockTracker/st-4.png');
 
 // ai
-const aiTool1 = require('../assets/images/aiTool/main.gif');
-const aiTool2 = require('../assets/images/aiTool/core.gif');
-const aiTool3 = require('../assets/images/aiTool/ai-still.png');
+// const aiTool1 = require('../assets/images/aiTool/main.gif');
+// const aiTool2 = require('../assets/images/aiTool/core.gif');
+// const aiTool3 = require('../assets/images/aiTool/ai-still.png');
+const aiTool1 = require('../assets/images/aiTool/enter-resized.gif');
+const aiTool2 = require('../assets/images/aiTool/main-resized.gif');
+const aiTool3 = require('../assets/images/aiTool/still-resized.png');
 
 
 // export const greenwoodImages: Image[] = [
